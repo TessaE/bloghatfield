@@ -6,4 +6,13 @@
     <br/>
     <%= comment.body %>
   </p>
+  <p>
+  	<%= button_to 'Delete', [comment.post, comment],
+               :method => :delete,
+               :class=>:destroy,
+               remote: true,
+               data: { confirm: 'Are you sure?' }
+                %>
+
+  </p>
 <% end %>
