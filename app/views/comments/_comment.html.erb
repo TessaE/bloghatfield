@@ -9,7 +9,7 @@
   <p>
   	<%= button_to 'Delete', [comment.post, comment],
                :method => :delete,
-               :class=>:destroy,
+               :class=> 'link-button',
                remote: true,
                data: { confirm: 'Are you sure?' }
                 %>

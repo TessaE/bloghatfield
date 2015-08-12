@@ -1,10 +1,16 @@
 class CommentsController < ApplicationController
 	def create
 		@post = Post.find(params[:post_id])
-		@comment = @post.comments.create!(comment_params)
-		respond_to do |format|
-			format.html { redirect_to @post }
-			format.js
+		@comment = @post.comments.create(comment_params)
+		if @comment.errors.any?
+			respond_to do |format|
+				render "posts/show"
+			end
+		else
+  			respond_to do |format|
+				format.html { redirect_to @post }
+				format.js
+			end
 		end
 	end
 
