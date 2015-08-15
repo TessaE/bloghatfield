@@ -7,12 +7,14 @@
     <%= comment.body %>
   </p>
   <p>
-  	<%= button_to 'Delete', [comment.post, comment],
+    <% if logged_in? %>
+  	  <%= button_to 'Delete', [comment.post, comment],
                :method => :delete,
                :class=> 'link-button',
                remote: true,
                data: { confirm: 'Are you sure?' }
                 %>
+    <% end %>
 
   </p>
 <% end %>

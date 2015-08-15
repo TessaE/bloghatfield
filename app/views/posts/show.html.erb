@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <%= render partial: @post %>
-
-<%= button_to 'Delete', post_path,
-               :method => :delete,
-               data: { confirm: 'Are you sure?' },
-               :class => 'link-button'
-               %> |
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<% if logged_in? %>
+  <%= button_to 'Delete', post_path,
+                 :method => :delete,
+                 data: { confirm: 'Are you sure?' },
+                 :class => 'link-button'
+                 %> |
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>
 
 <h2>Comments</h2>

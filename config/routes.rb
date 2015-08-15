@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :posts do
     resources :comments, only: [:create, :destroy]
   end
+
+  get    'admin'   => 'sessions#new'
+  post   'admin'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
 
   root 'posts#index'
 

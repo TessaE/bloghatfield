@@ -10,6 +10,10 @@
   <%= render partial: 'layouts/header' %>
 
 <div id="main">
+  	<% flash.each do |message_type, message| %>
+    	<div><%= message %></div>
+  <% end %>
+
   <%= yield %>
 </div>
   <%= render partial: 'layouts/footer' %>

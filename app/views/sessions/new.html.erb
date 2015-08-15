@@ -1,0 +1,17 @@
+<h1>Log in</h1>
+<% if logged_in? %>
+	<p>You are already logged in</p>
+<% else %>
+  <div class="">
+    <%= form_for(:session, url: admin_path) do |f| %>
+
+      <%= f.label :username %>
+      <%= f.text_field :username, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "" %>
+    <% end %>
+  </div>
+<% end %>

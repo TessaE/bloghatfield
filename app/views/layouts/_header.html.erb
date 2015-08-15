@@ -16,4 +16,8 @@
       </li>
     </ul>
   </section>
+  <% if logged_in? %>
+    <%= button_to "Log out", logout_path, method: :delete, :class => 'link-button' %>
+  <% end %>
+
 </nav>
