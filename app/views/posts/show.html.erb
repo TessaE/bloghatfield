@@ -1,30 +1,36 @@
-<p id="notice"><%= notice %></p>
-
-<%= render partial: @post %>
-<% if logged_in? %>
-  <%= button_to 'Delete', post_path,
-                 :method => :delete,
-                 data: { confirm: 'Are you sure?' },
-                 :class => 'link-button'
-                 %> |
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-<% end %>
-<%= link_to 'Back', posts_path %>
-
-<h2>Comments</h2>
-<div id="comments">
-	<%= render partial: @post.comments %>
-</div>
-  
-<%= form_for [@post, Comment.new], remote: true, :authenticity_token => true do |f| %>
-  <% if @comment && @comment.errors.any? %>
-    <% @comment.errors.full_messages.each do |msg| %>
-     <li><%= msg %></li>
-    <% end %>
+<section id="post-section">
+  <%= render partial: @post %>
+  <% if logged_in? %>
+    <div class="link-block">
+      <%= button_to 'Delete', post_path,
+                     :method => :delete,
+                     data: { confirm: 'Are you sure?' },
+                     :class => 'link-button'
+                     %> |
+      <%= link_to 'Edit', edit_post_path(@post) %> |
+      <%= link_to 'Back', posts_path %>
+    </div>
+  <% else %>
+    <%= link_to 'Back', posts_path %>
   <% end %>
-  <p>
-    <%= f.label :body, "New comment" %><br/>
-    <%= f.text_area :body %>
-  </p>
-  <p><%= f.submit "Add comment" %></p>
-<% end %>
+</section>
+
+<section id="comment-section">
+  <div id="comments">
+    <h2>Comments</h2>
+  	<%= render partial: @post.comments %>
+  </div>
+    
+  <%= form_for [@post, Comment.new], remote: true, :authenticity_token => true do |f| %>
+    <% if @comment && @comment.errors.any? %>
+      <% @comment.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+      <% end %>
+    <% end %>
+    <p>
+      <%= f.label :body, "New comment" %><br/>
+      <%= f.text_area :body %>
+    </p>
+    <p><%= f.submit "Add comment" %></p>
+  <% end %>
+</section>

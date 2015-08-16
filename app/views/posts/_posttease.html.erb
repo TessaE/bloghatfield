@@ -1,0 +1,6 @@
+ <h2><%= link_to_unless_current posttease.title, posttease %></h2>
+ <% if posttease.body.length < 300 %>
+ 	<%= simple_format truncate(sanitize(posttease.body), length: posttease.body.length - 1, separator: ' ', omission: '... ') { link_to "Lees verder", posttease }%>
+ <% else %>
+ 	<%= simple_format truncate(sanitize(posttease.body), length: 300, separator: ' ', omission: '... ') { link_to "Lees verder", posttease }%>
+ <% end %>

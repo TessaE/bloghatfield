@@ -1,9 +1,9 @@
 <nav class="header">
-  <h1 class="title">
+  <h1 id="title">
     <%= link_to 'Tessa in Hatfield', root_path %>
   </h1>
   <section>
-    <ul>
+    <ul id="menu">
       <li class="menu-item">
         <%= link_to 'Github', 'https://github.com/reInteractive-open' %> | 
       </li>
@@ -17,7 +17,7 @@
     </ul>
   </section>
   <% if logged_in? %>
-    <%= button_to "Log out", logout_path, method: :delete, :class => 'link-button' %>
+    <%= button_to "Log out", logout_path, method: :delete, :id => 'logout-button', :class => 'link-button' %>
   <% end %>
 
 </nav>

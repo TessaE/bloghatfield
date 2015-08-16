@@ -1,0 +1,53 @@
+#main {
+	font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+
+	h2 {
+		margin: 0px;
+	  padding: 5px 0px;
+    font-size: 24px;
+
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: underline;
+        color: black;
+			}
+		}
+	}
+}
+
+#notice {
+  margin: 0px;
+}
+
+#post-section {
+  background-color: #C5C5C5;
+  padding: 5px 10px;
+  margin: 5px 0px;
+}
+
+#comment-section {
+  background-color: #FFCCCC;
+  padding: 5px 10px;
+  margin: 5px 0px;
+  font-size: 17px;
+}
+
+ .link-button, a {
+ 	 -moz-user-select: text;
+     background:none!important;
+     border:none; 
+     padding:0!important;
+     font: inherit; 
+     cursor: pointer;
+     text-decoration: underline;
+     color: #000;
+     &:hover {
+     	color: red;
+     }
+}
+
+.link-block, .button_to, .button_to div {
+  display: inline;
+}

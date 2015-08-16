@@ -13,15 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
- .link-button {
- 	 -moz-user-select: text;
- 	 display: inline;
-     background:none!important;
-     border:none; 
-     padding:0!important;
-     font: inherit; 
-     cursor: pointer;
-     text-decoration: underline;
-     color: #000;
-}

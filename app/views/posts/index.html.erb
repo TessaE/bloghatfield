@@ -1,6 +1,9 @@
-<%= render partial: @posts %>
+<section id="post-section">
 
-<% if logged_in? %>
-  <%= link_to 'New Post', new_post_path %>
-<% end %>
+	<%= render partial: "posttease", collection: @posts || "There are no posts" %>
+
+	<% if logged_in? %>
+	  <%= link_to 'New Post', new_post_path %>
+	<% end %>
+</section>
 
