@@ -1,6 +1,7 @@
-<section id="post-section">
+<div id="main-img"></div>
 
-	<%= render partial: "posttease", collection: @posts || "There are no posts" %>
+<section id="post-section">
+	<%= render partial: "posttease", collection: @posts.reverse %>
 
 	<% if logged_in? %>
 	  <%= link_to 'New Post', new_post_path %>

@@ -1,17 +1,23 @@
-<h2>Log in</h2>
-<% if logged_in? %>
-	<p>You are already logged in</p>
-<% else %>
-  <div class="">
-    <%= form_for(:session, url: admin_path) do |f| %>
+<section class="yellow log-in">
+  <h2>Log in</h2>
+  <% if logged_in? %>
+  	<p>You are already logged in</p>
+  <% else %>
+    <div>
+      <%= form_for(:session, url: admin_path) do |f| %>
 
-      <%= f.label :username %>
-      <%= f.text_field :username, class: 'form-control' %>
+        <div class="input-thing">
+          <%= f.label :username %>
+          <%= f.text_field :username, class: 'form-control' %>
+        </div>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+        <div class="input-thing">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
 
-      <%= f.submit "Log in", class: "" %>
-    <% end %>
-  </div>
-<% end %>
+        <%= f.submit "Log in", class: "button" %>
+      <% end %>
+    </div>
+  <% end %>
+</section>

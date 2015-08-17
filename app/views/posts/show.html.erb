@@ -18,7 +18,7 @@
 <section id="comment-section">
   <div id="comments">
     <h2>Comments</h2>
-  	<%= render partial: @post.comments %>
+  	<%= render partial: @post.comments.reverse %>
   </div>
     
   <%= form_for [@post, Comment.new], remote: true, :authenticity_token => true do |f| %>
