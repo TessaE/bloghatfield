@@ -1,0 +1,14 @@
+<div class="yellow">
+	<h2>Foto's</h2>
+		
+ 	<div class="all-images">
+ 		<% @posts.each do |post| %>
+ 			<% unless post.images.nil? %>
+				<% images = post.images.split(" ") %>
+		 		<% images.each do |image| %>
+		 			<%= image_tag(image) %>
+		 		<% end %>
+		 	<% end %>
+		<% end %>
+    </div>
+</div>

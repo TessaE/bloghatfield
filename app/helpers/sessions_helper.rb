@@ -1,5 +1,5 @@
 module SessionsHelper
-	def log_in()
+	def log_in
     	session[:user_id] = "admin"
   	end
 

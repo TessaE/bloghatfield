@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'static_pages/aboutme'
+
+  get 'static_pages/photos'
+
   get 'sessions/new'
 
   resources :posts do
@@ -9,6 +13,8 @@ Rails.application.routes.draw do
   post   'admin'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
+  get '/overmij' => 'static_pages#aboutme'
+  get '/fotos' => 'static_pages#photos'
 
   root 'posts#index'
 

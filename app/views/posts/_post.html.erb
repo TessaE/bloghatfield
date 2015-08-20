@@ -1,8 +1,12 @@
  <h2><%= link_to_unless_current post.title, post %></h2>
- <div class="post-images">
- 	<% images = post.images.split(" ") %>
- 	<% images.each do |image| %>
- 		<%= image_tag(image, alt:"Hi") %>
- 	<% end %>
- </div>
- <%= simple_format post.body %>
+ 
+<% unless post.images.nil? %>	
+ 	<div class="post-images">
+	 	<% images = post.images.split(" ") %>
+	 	<% images.each do |image| %>
+	 		<%= image_tag(image) %>
+	 	<% end %>
+	  </div>
+<% end %>
+
+<%= simple_format post.body %>
