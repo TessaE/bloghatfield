@@ -1,6 +1,6 @@
  <h2><%= link_to_unless_current post.title, post %></h2>
  
-<% unless post.images.nil? %>	
+<% unless post.images.nil? or post.images.empty? %>	
  	<div class="post-images">
 	 	<% images = post.images.split(" ") %>
 	 	<% images.each do |image| %>

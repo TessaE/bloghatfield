@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'static_pages/aboutme'
-
   get 'static_pages/photos'
 
   get 'sessions/new'

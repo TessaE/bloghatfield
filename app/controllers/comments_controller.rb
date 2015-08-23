@@ -3,16 +3,19 @@ class CommentsController < ApplicationController
 	def create
 		@post = Post.find(params[:post_id])
 		@comment = @post.comments.create(comment_params)
-		if @comment.errors.any?
-			respond_to do |format|
-				render "posts/show"
-			end
-		else
+		
+		if @comment.save
   			respond_to do |format|
 				format.html { redirect_to @post }
 				format.js
 			end
-		end
+		else
+			respond_to do |format|
+				format.html { redirect_to @post, notice: 'Geef een naam en reactie' }
+				format.js
+			end
+    		
+ 		end
 	end
 
 	def destroy

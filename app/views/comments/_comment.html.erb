@@ -11,10 +11,10 @@
     <% if logged_in? %>
   	  <%= button_to 'Delete', [comment.post, comment],
                :method => :delete,
-               :class=> 'link-button',
+               :class => 'link-button',
                remote: true,
                data: { confirm: 'Are you sure?' }
-                %>
+               %>
     <% end %>
 
   </p>

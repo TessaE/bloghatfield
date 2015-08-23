@@ -16,17 +16,12 @@
 </section>
 
 <section id="comment-section">
+  <h2>Reacties</h2>
   <div id="comments">
-    <h2>Reacties</h2>
   	<%= render partial: @post.comments.reverse %>
   </div>
     
-  <%= form_for [@post, Comment.new], remote: true, :authenticity_token => true do |f| %>
-    <% if @comment && @comment.errors.any? %>
-      <% @comment.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
-      <% end %>
-    <% end %>
+  <%= form_for [@post, Comment.new], remote: true, authenticity_token: true do |f| %>
     <p>
       <%= f.label :name, "Naam" %><br/>
       <%= f.text_field :name %></br></br>
