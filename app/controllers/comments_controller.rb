@@ -14,7 +14,6 @@ class CommentsController < ApplicationController
 				format.html { redirect_to @post, notice: 'Geef een naam en reactie' }
 				format.js
 			end
-    		
  		end
 	end
 
